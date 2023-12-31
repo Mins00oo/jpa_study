@@ -15,4 +15,5 @@ public class Order {
 
     @OneToMany(mappedBy = "order", fetch = FetchType.LAZY)
     private List<OrderDetail> orderDetails;
+
 }
