@@ -13,6 +13,6 @@ public class Team {
     private long id;
     private String name;
 
-    @OneToMany(fetch = FetchType.EAGER)
+    @OneToMany(fetch = FetchType.LAZY)
     private List<User> users = new ArrayList<>();
 }
