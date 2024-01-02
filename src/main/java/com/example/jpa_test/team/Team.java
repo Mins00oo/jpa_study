@@ -1,25 +1,21 @@
 package com.example.jpa_test.team;
 
-import com.example.jpa_test.User.User;
-import com.fasterxml.jackson.annotation.JsonManagedReference;
 import jakarta.persistence.*;
-import lombok.Getter;
-import lombok.Setter;
-
-import java.util.ArrayList;
-import java.util.List;
+import lombok.*;
 
 @Entity
 @Getter
-@Setter
+@NoArgsConstructor(access = AccessLevel.PROTECTED)
 public class Team {
     @Id
+    @Column(name = "team_id")
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
 
     private String name;
 
-    @OneToMany(mappedBy = "team", fetch = FetchType.EAGER)
-    @JsonManagedReference
-    private List<User> users = new ArrayList<>();
+    @Builder
+    public Team(String name) {
+        this.name = name;
+    }
 }

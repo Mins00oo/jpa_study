@@ -18,10 +18,9 @@ public class TeamService {
 
     @Transactional(readOnly = true)
     public List<Team> getUsersByTeam(Long teamId) {
-        List<Team> teams = teamRepository.findAll();
-        for (Team team : teams) {
-            team.getUsers().size();
-        }
-        return teams;
+
+        return null;
     }
+
+
 }
